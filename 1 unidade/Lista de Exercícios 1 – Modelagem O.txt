@@ -1,0 +1,205 @@
+Lista de Exercícios 1 – Modelagem Orientada a Objetos
+1) Modele um restaurante que oferece a seus clientes comida a Kg, sobremesa,
+refrigerante e cerveja. O valor do Kg de comida é R$ 30,00, a unidade da sobremesa fica
+por R$ 6,00, o valor do refrigerante é R$ 5,00 e a cerveja custa R$ 10,00. A conta é
+contabilizada através do número da mesa, sendo de responsabilidade do
+estabelecimento informar o total geral e o valor por pessoa, que é calculado através da
+divisão do valor total pelo número de integrantes da mesa.
+As principais ações do modelo são referentes a abertura do pedido, a adição de novas
+pessoas na mesa caso cheguem mais tarde, a adição de comida, sobremesa, refrigerante
+e cerveja a qualquer instante que seja necessário, o fechamento da conta e a emissão
+da nota fiscal com o valor total e com o valor por pessoa.
+
+==========================================================================================
+
+Modelo restaurante{
+	Inicio do modelo
+		dado numeroMesa = 0, qntdPessoas, valorTotal, Kg;
+		dado comidaKg = 30, sobremesa = 6, refri = 5, cerveja = 10;
+		operação abreConta(nome,deposito,especial)
+	início
+		função abrirPedido{
+			Quantas pessoas?
+			qntdPessoas = resp;
+			valorTotal = 0
+			numeroMesa++;
+			
+		}
+		
+		função addPessoas{
+			Quantas pessoas chegaram a mais?
+			qntdPessoas = qntdPessoas + resp;
+		}
+		
+		função addComida{
+			Qual comida sera adicionada?
+			
+			if(resp == comidaKg){
+				Quantos pratos?
+				
+				for(para preencher o valor de cada prato mas to com preguiça)
+				Quantos g?
+				X = (30 * resp) / 1000; //regra de 3
+				valorTotal = X;
+
+			}else if(resp == sobremesa){
+				Quantas sobremesas?
+				valorTotal = valorTotal + (sobremesa*resp)
+			}else if(resp == refrigerante){
+				Quantos refrigerantes?
+				valorTotal = valorTotal + (refri*resp)
+			}else{
+				Quantas cervejas?
+				valorTotal = valorTotal + (cerveja*resp)
+			}
+		}
+		
+		função fechamentoConta{
+			Qual foi o valor total?
+			valorTotal;
+
+			Gostaria de adicionar 10% pelo serviço?
+
+			if(resp == sim){
+				valorTotal = valorTotal + (valorTotal * 0,1);
+				Sua conta deu: valorTotal;
+			}else{
+				Sua conta deu: valorTotal;
+			}
+		}
+		
+		função notaFiscal{
+			Aqui está sua nota fiscal:
+
+			-------------------------------------
+      			Restaurante Sabor & Cia        
+			------------------------------------- 
+			Itens consumidos:
+			1x Prato Executivo EX
+			2x Refrigerante    EX
+			1x Sobremesa       EX
+			-------------------------------------
+			Número da mesa: ___ numeroMesa 
+			Qtd. Pessoas: ___  qntdPessoas
+			-------------------------------------
+			TOTAL: R$ ________valorTotal
+			-------------------------------------
+			Obrigado pela preferência!
+		}
+	}
+		
+fim
+
+===========================================================================================
+
+2) Crie um modelo Livro que represente os dados básicos de um livro, sem se preocupar
+com a sua finalidade.
+
+Modelo dadosDoLivro{
+
+	inicioDoModelo
+		
+
+}
+3) Usando o resultado do exercício anterior como base, crie um modelo “LivroDeLivraria”
+que represente os dados básicos de um livro que está à venda em uma livraria.
+4) Usando o resultado do modelo “Livro” como base, crie um modelo “LivroDeBiblioteca”
+que represente os dados básicos de um livro de uma biblioteca, que pode ser
+emprestado a leitores.
+5) Escreva um modelo para representar uma conta bancária simplificada com os seguintes
+dados: nome do titular, número da conta e valor na conta corrente. Crie uma operação
+para abrir a conta inicializando os dados. Além disso, especifique as operações para
+mostrar os dados da conta (emitir saldo), e fazer movimentações de depósitos e
+retiradas
+
+Modelo contaBancaria{
+
+	inicioDoModelo
+		dados nomeTitular, numeroConta, valorConta, continuar = 1;
+
+	função abrirConta{
+		Qual o nome do Titular?
+		nomeTitular = resp;
+		
+		Qual o numero da conta?
+		numeroConta = resp;
+
+		valorConta = 0;
+	}
+
+	função depositar{
+		Quanto quer depositar?
+		valorConta = valorConta + resp;
+	}
+
+	função retirar{
+		if(valorConta == 0){
+			Sua conta está zerada, não será possível retirar!
+			return 0;
+		}else{
+			Qual valor deseja retirar?
+			if(resp > valorConta){
+				valor maior que existe na conta, me diga outro!
+				return;
+			}else{
+			
+			valorConta = valorConta - resp;
+			}
+		}
+
+		
+	}
+
+	função emitirSaldo{
+		Qual o nome do Titular?
+		nomeTitular = resp;
+		
+		Qual o numero da conta?
+		numeroConta = resp;
+
+		valorConta = 0;
+	}
+
+	função Sair{
+		continuar = 0;
+		return;
+	}
+
+while continuar == 1
+	Qual operação deseja fazer hoje?
+	1 - Abrir conta
+	2 - Depositar
+	3 - Retirar
+	4 - Emitir saldo
+	5 - Sair
+
+	switch(resp){
+
+	case 1:
+		função abrirConta
+	default;
+	
+	case 2:
+		função depositar
+	default;
+	
+	case 3:
+		função retirar
+	default;
+	
+	case 4:
+		função emitirSaldo
+	default;
+	
+	}
+	
+	case 5:
+		função Sair;
+	default;
+	
+	
+	}
+	
+		
+
+}
