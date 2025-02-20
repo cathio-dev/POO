@@ -177,25 +177,26 @@ while continuar == 1
 
 	case 1:
 		função abrirConta
-	default;
+	break;
 	
 	case 2:
 		função depositar
-	default;
+	break;
 	
 	case 3:
 		função retirar
-	default;
+	break;
 	
 	case 4:
 		função emitirSaldo
-	default;
+	break;
 	
 	}
 	
 	case 5:
 		função Sair;
-	default;
+	default:
+	Digite um numero entre as casas
 	
 	
 	}
