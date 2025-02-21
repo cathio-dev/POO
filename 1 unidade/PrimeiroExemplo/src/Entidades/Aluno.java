@@ -11,5 +11,29 @@ public class Aluno {
         this.mediaGeral = mediaGeral;
     }
 
+    public int getMatricula() {
+        return matricula;
+    }
+
+    public void setMatricula(int matricula) {
+        this.matricula = matricula;
+    }
+
+    public String getNome() {
+        return nome;
+    }
+
+    public void setNome(String nome) {
+        this.nome = nome;
+    }
+
+    public float getMediaGeral() {
+        return mediaGeral;
+    }
+
+    public void setMediaGeral(float mediaGeral) {
+        this.mediaGeral = mediaGeral;
+    }
+
     
 }
