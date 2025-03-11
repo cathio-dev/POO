@@ -3,6 +3,7 @@ package Entidades;
 public class Funcionario {
     private String nome;
     private float salBruto;
+    private float salAntigo;
 
     public Funcionario(String nome, float salBruto, float imposto) {
         this.nome = nome;
@@ -27,7 +28,15 @@ public class Funcionario {
     }
     
     public void percentualAumento(float percentual){
-        this.salBruto = this.salBruto + ( (percentual/100) * this.salBruto );
+        this.salBruto = this.salBruto + ( (percentual/100) * this.salAntigo );
+    }
+
+    public float getSalAntigo() {
+        return salAntigo;
+    }
+
+    public void setSalAntigo(float salAntigo) {
+        this.salAntigo = salAntigo;
     }
     
     

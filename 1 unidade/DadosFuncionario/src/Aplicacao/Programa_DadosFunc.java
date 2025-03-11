@@ -5,7 +5,7 @@ import java.util.Scanner;
 
 import Entidades.Funcionario;
 
-public class Programa {
+public class Programa_DadosFunc {
     public static void main(String[] args) throws Exception {
         Locale ptBR = new Locale("pt", "BR");
         Scanner sc = new Scanner(System.in);
@@ -23,6 +23,7 @@ public class Programa {
         imposto = sc.nextFloat();
 
         Funcionario funcionario = new Funcionario(nome, salBruto, imposto);
+        funcionario.setSalAntigo(salBruto);
         funcionario.Imposto(imposto);
 
         System.out.println();

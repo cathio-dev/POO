@@ -58,7 +58,7 @@ public class ContaBancaria {
     }
 
     public void Saque(){
-        this.saldo = (this.saldo - this.valSaque) - 5;
+        this.saldo -= this.valSaque + 5;
     }
 
 
