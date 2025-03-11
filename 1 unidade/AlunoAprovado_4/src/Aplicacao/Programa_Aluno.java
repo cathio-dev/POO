@@ -5,7 +5,7 @@ import Entidades.Aluno;
 import java.util.Locale;
 import java.util.Scanner;
 
-public class Programa {
+public class Programa_Aluno {
     public static void main(String[] args) throws Exception {
         Scanner sc = new Scanner(System.in);
         Locale ptBR = new Locale("pt", "BR");

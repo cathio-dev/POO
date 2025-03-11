@@ -51,19 +51,17 @@ public class Aluno {
         return total;
     }
 
-    public void calcularNotaFinal(){
-        this.total = this.nota1 + this.nota2 + this.nota3; 
+    public void calcularNotaFinal() {
+        this.total = this.nota1 + this.nota2 + this.nota3;
     }
 
-    public void Aprovado(){
+    public void Aprovado() {
         System.out.println("Aprovado");
     }
-    
-    public double Reprovado(){
+
+    public double Reprovado() {
         double conta = (60) - this.total;
         return conta;
     }
-    
 
-    
 }
