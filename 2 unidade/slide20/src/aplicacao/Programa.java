@@ -1,4 +1,6 @@
 package aplicacao;
+import entidades.Conta;
+
 public class Programa {
     public static void main(String[] args) throws Exception {
         
